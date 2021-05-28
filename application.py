@@ -3,7 +3,8 @@ from flask import Flask, render_template, request
 #import os
 #import cv2
 #from mtcnn.mtcnn import MTCNN
-#from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
+from matplotlib.patches import Rectangle
 
 
 
@@ -13,25 +14,18 @@ application = Flask(__name__)
 @application.route('/')
 def hello_world():
     return render_template('before.html')
+def draw_box(image_path, faces):
+    image = plt.imread(image_path)
+    plt.imshow(image)
+    ax = plt.gca()
+    for face in faces:
+        x,y,w,h = face['box']
+        face_border = Rectangle((x,y),w,h,fill=False,color='red')
+        ax.add_patch(face_border)
 
-#
-# def draw_box(image_path, faces, number):
-#     #
-#     img1 = cv2.imread(image_path)
-#
-#
-#     for face in faces:
-#         x, y, w, h = face['box']
-#         cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 2)
-#
-#
-#     if number==1:
-#         cv2.imwrite('static/a1.jpg', img1)
-#     else:
-#         cv2.imwrite('static/a2.jpg', img1)
-#    # plt.clf()
-#
-
+    plt.axis('off')
+    plt.savefig('static/a1.jpg')
+    plt.show()
 
 
 @application.route('/uploader', methods=['GET', 'POST'])
@@ -49,11 +43,11 @@ def upload_file():
         # filename = secure_filename(file.filename)
         # file.save(os.path.join(application.config['UPLOAD_FOLDER'], filename))
 
-        # from mtcnn.mtcnn import MTCNN
-        # image_uno = plt.imread('static/f1.jpg')
-        # image_dos = plt.imread('static/s1.jpg')
-        # draw_box('static/f1.jpg', MTCNN.detect_faces(image_uno), 1)
-        # draw_box('static/s1.jpg', MTCNN.detect_faces(image_dos), 2)
+        from mtcnn.mtcnn import MTCNN
+        image_uno = plt.imread('static/f1.jpg')
+        image_dos = plt.imread('static/s1.jpg')
+        draw_box('static/f1.jpg', MTCNN.detect_faces(image_uno), 1)
+        draw_box('static/s1.jpg', MTCNN.detect_faces(image_dos), 2)
 
 
         ##perform_predictions("static/f1.jpg","static/s1.jpg")
