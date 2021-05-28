@@ -46,8 +46,8 @@ def upload_file():
         from mtcnn.mtcnn import MTCNN
         image_uno = plt.imread('static/f1.jpg')
         image_dos = plt.imread('static/s1.jpg')
-        draw_box('static/f1.jpg', MTCNN.detect_faces(image_uno))
-        draw_box('static/s1.jpg', MTCNN.detect_faces(image_dos))
+        #draw_box('static/f1.jpg', MTCNN.detect_faces(image_uno))
+        #draw_box('static/s1.jpg', MTCNN.detect_faces(image_dos))
 
 
         ##perform_predictions("static/f1.jpg","static/s1.jpg")
