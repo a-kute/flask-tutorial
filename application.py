@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
-from werkzeug.utils import secure_filename
-import os
-import cv2
+#from werkzeug.utils import secure_filename
+#import os
+#import cv2
 #from mtcnn.mtcnn import MTCNN
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
 
 
@@ -14,23 +14,23 @@ application = Flask(__name__)
 def hello_world():
     return render_template('before.html')
 
-
-def draw_box(image_path, faces, number):
-    #
-    img1 = cv2.imread(image_path)
-
-
-    for face in faces:
-        x, y, w, h = face['box']
-        cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 2)
-
-
-    if number==1:
-        cv2.imwrite('static/a1.jpg', img1)
-    else:
-        cv2.imwrite('static/a2.jpg', img1)
-    plt.clf()
-
+#
+# def draw_box(image_path, faces, number):
+#     #
+#     img1 = cv2.imread(image_path)
+#
+#
+#     for face in faces:
+#         x, y, w, h = face['box']
+#         cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 0, 255), 2)
+#
+#
+#     if number==1:
+#         cv2.imwrite('static/a1.jpg', img1)
+#     else:
+#         cv2.imwrite('static/a2.jpg', img1)
+#    # plt.clf()
+#
 
 
 
