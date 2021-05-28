@@ -35,7 +35,7 @@ def upload_file():
                 file.filename="static/s1.jpg"
             file.save(file.filename)
             count+=1
-        from mtcnn.mtcnn import MTCNN
+        #from mtcnn.mtcnn import MTCNN
 
 
         # filename = secure_filename(file.filename)
