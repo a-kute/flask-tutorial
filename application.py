@@ -26,6 +26,7 @@ def hello_world():
 #     plt.axis('off')
 #     plt.savefig('static/a1.jpg')
 #     plt.show()
+#
 
 
 @application.route('/uploader', methods=['GET', 'POST'])
