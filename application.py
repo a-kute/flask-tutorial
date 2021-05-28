@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from matplotlib import pyplot as plt
+import cv2
 #from mtcnn.mtcnn import MTCNN
 
 
@@ -50,7 +51,7 @@ def upload_file():
 
 
         ##perform_predictions("static/f1.jpg","static/s1.jpg")
-        # img3 = cv2.imread('static/first.jpg')
+        img3 = cv2.imread('static/first.jpg')
         # cv2.imwrite('trial/afterI.jpg', img3)
         # img2 = cv2.imread('trial/second.jpg')
         # cv2.imwrite('trial/afterI2.jpg', img2)
