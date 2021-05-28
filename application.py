@@ -1,10 +1,4 @@
 from flask import Flask, render_template, request
-#from werkzeug.utils import secure_filename
-#import os
-#import cv2
-#from mtcnn.mtcnn import MTCNN
-#from matplotlib import pyplot as plt
-#from matplotlib.patches import Rectangle
 
 
 
@@ -41,10 +35,12 @@ def upload_file():
                 file.filename="static/s1.jpg"
             file.save(file.filename)
             count+=1
+
+
         # filename = secure_filename(file.filename)
         # file.save(os.path.join(application.config['UPLOAD_FOLDER'], filename))
 
-        from mtcnn.mtcnn import MTCNN
+        #from mtcnn.mtcnn import MTCNN
        # image_uno = plt.imread('static/f1.jpg')
        # image_dos = plt.imread('static/s1.jpg')
         #draw_box('static/f1.jpg', MTCNN.detect_faces(image_uno))
