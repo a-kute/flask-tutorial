@@ -43,8 +43,8 @@ def upload_file():
         # file.save(os.path.join(application.config['UPLOAD_FOLDER'], filename))
 
 
-        image_uno = plt.imread('static/f1.jpg')
-        image_dos = plt.imread('static/s1.jpg')
+        #image_uno = plt.imread('static/f1.jpg')
+        #image_dos = plt.imread('static/s1.jpg')
         #draw_box('static/f1.jpg', MTCNN.detect_faces(image_uno))
         #draw_box('static/s1.jpg', MTCNN.detect_faces(image_dos))
 
