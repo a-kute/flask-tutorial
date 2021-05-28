@@ -3,8 +3,8 @@ from flask import Flask, render_template, request
 #import os
 #import cv2
 #from mtcnn.mtcnn import MTCNN
-from matplotlib import pyplot as plt
-from matplotlib.patches import Rectangle
+#from matplotlib import pyplot as plt
+#from matplotlib.patches import Rectangle
 
 
 
@@ -14,18 +14,18 @@ application = Flask(__name__)
 @application.route('/')
 def hello_world():
     return render_template('before.html')
-def draw_box(image_path, faces):
-    image = plt.imread(image_path)
-    plt.imshow(image)
-    ax = plt.gca()
-    for face in faces:
-        x,y,w,h = face['box']
-        face_border = Rectangle((x,y),w,h,fill=False,color='red')
-        ax.add_patch(face_border)
-
-    plt.axis('off')
-    plt.savefig('static/a1.jpg')
-    plt.show()
+# def draw_box(image_path, faces):
+#     image = plt.imread(image_path)
+#     plt.imshow(image)
+#     ax = plt.gca()
+#     for face in faces:
+#         x,y,w,h = face['box']
+#         face_border = Rectangle((x,y),w,h,fill=False,color='red')
+#         ax.add_patch(face_border)
+#
+#     plt.axis('off')
+#     plt.savefig('static/a1.jpg')
+#     plt.show()
 
 
 @application.route('/uploader', methods=['GET', 'POST'])
