@@ -2,13 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tittttttle</title>
+    <script src="static/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/styles.css" />
+
 </head>
-<body>
-<br>
-<img src="static/f1.jpg" alt="image" height=52% width = 50%>
-<img src="static/a1.jpg"alt="image" height=52% width = 50%>
+<body><br>
+           <p id="demo"></p>
+{{ data }}
 
+ <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+<script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+ </form>
+             <form action = "http://localhost:5000/" enctype = "multipart/form-data">
 
+         <input type = "submit" name = "back" value="back">
+             </form>>
 </body>
 </html>
